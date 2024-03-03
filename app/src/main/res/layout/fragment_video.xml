@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".ui.VideoFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:background="@color/sariq"
+        android:padding="16dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivBack"
+            android:src="@drawable/ic_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/kulrang"
+            android:text="@string/video_darsliklar"
+            android:textSize="32sp"
+            android:gravity="center_horizontal"/>
+    </LinearLayout>
+
+
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:background="@color/sariq"
+           android:paddingVertical="20dp"
+           android:orientation="vertical"
+           android:paddingHorizontal="6dp"
+           android:layout_height="match_parent">
+           <androidx.media3.ui.PlayerView
+               android:id="@+id/playerView"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:use_controller="true"
+               app:show_buffering="when_playing"
+               app:shutter_background_color="@color/sariq"
+               app:show_shuffle_button="true"/>
+
+           <TextView
+               android:id="@+id/tvDescription"
+               android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+               android:layout_width="match_parent"
+               android:textSize="20sp"
+               android:layout_marginTop="16dp"
+               android:textColor="@color/white"
+               android:layout_height="match_parent"/>
+
+       </LinearLayout>
+
+</LinearLayout>

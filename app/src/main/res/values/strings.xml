@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Power BI</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">Boshlash</string>
+    <string name="microsoftning_boshqa_dasturlari">Microsoftning boshqa dasturlari</string>
+    <string name="dastur_haqida">Dastur haqida</string>
+    <string name="testlar">Testlar</string>
+    <string name="video_darsliklar">Video darsliklar</string>
+    <string name="kitoblar">Kitoblar</string>
+    <string name="grafiklar">Grafiklar</string>
+    <string name="natija">Natija</string>
+    <string name="testni_qayta_ishlash">Testni qayta ishlash</string>
+    <string name="asosiy_menuga_qaytish">Asosiy Menuga qaytish</string>
+    <string name="count">8</string>
+    <string name="correct">To\'g\'ri javob</string>
+    <string name="wrong">Xato Javob</string>
+    <string name="total">Umumiy</string>
+    <string name="boshqa_dasturlar">Boshqa dasturlar</string>
+    <string name="all_apps">Hamma dasturlar</string>
+    <string name="micCorp">Microsoft korporatsiyasi</string>
+    <string name="micDesc">Microsoft ilovalari – odamlar va korxonalarga o‘z imkoniyatlarini to‘liq ro‘yobga chiqarishga yordam beruvchi dasturiy ta’minot, xizmatlar va qurilmalar bo‘yicha jahon yetakchisi.</string>
+</resources>

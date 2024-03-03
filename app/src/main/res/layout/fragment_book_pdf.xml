@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.BookPdfFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:background="@color/sariq"
+        android:padding="16dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivBack"
+            android:src="@drawable/ic_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/kitoblar"
+
+            android:textColor="@color/kulrang"
+            android:textSize="32sp"
+            android:gravity="center_horizontal"/>
+    </LinearLayout>
+
+   <FrameLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+
+       <com.github.barteksc.pdfviewer.PDFView
+           android:id="@+id/pdfView"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent" />
+
+       <include layout="@layout/loading" />
+   </FrameLayout>
+
+</LinearLayout>

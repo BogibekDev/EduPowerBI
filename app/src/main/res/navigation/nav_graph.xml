@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="uz.ubtuit.powerbi.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="uz.ubtuit.powerbi.ui.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_testFragment"
+            app:destination="@id/testFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_booksFragment"
+            app:destination="@id/booksFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_videosFragment"
+            app:destination="@id/videosFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_graphicsFragment"
+            app:destination="@id/graphicsFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_moreMicrosoftFragment"
+            app:destination="@id/moreMicrosoftFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_aboutProjectFragment"
+            app:destination="@id/aboutProjectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutProjectFragment"
+        android:name="uz.ubtuit.powerbi.ui.AboutProjectFragment"
+        android:label="fragment_about_project"
+        tools:layout="@layout/fragment_about_project" >
+        <action
+            android:id="@+id/action_aboutProjectFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/moreMicrosoftFragment"
+        android:name="uz.ubtuit.powerbi.ui.MoreMicrosoftFragment"
+        android:label="fragment_more_microsoft"
+        tools:layout="@layout/fragment_more_microsoft" >
+        <action
+            android:id="@+id/action_moreMicrosoftFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/booksFragment"
+        android:name="uz.ubtuit.powerbi.ui.BooksFragment"
+        android:label="fragment_books"
+        tools:layout="@layout/fragment_books" >
+        <action
+            android:id="@+id/action_booksFragment_to_bookPdfFragment"
+            app:destination="@id/bookPdfFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/testFragment"
+        android:name="uz.ubtuit.powerbi.ui.TestFragment"
+        android:label="fragment_test"
+        tools:layout="@layout/fragment_test" >
+        <action
+            android:id="@+id/action_testFragment_to_testResultFragment"
+            app:destination="@id/testResultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="uz.ubtuit.powerbi.ui.VideoFragment"
+        android:label="fragment_video"
+        tools:layout="@layout/fragment_video" >
+        <argument
+            android:name="videoUrl"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/videosFragment"
+        android:name="uz.ubtuit.powerbi.ui.VideosFragment"
+        android:label="fragment_videos"
+        tools:layout="@layout/fragment_videos" >
+        <action
+            android:id="@+id/action_videosFragment_to_videoFragment"
+            app:destination="@id/videoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/graphicsFragment"
+        android:name="uz.ubtuit.powerbi.ui.GraphicsFragment"
+        android:label="fragment_graphics"
+        tools:layout="@layout/fragment_graphics" />
+    <fragment
+        android:id="@+id/bookPdfFragment"
+        android:name="uz.ubtuit.powerbi.ui.BookPdfFragment"
+        android:label="fragment_book_pdf"
+        tools:layout="@layout/fragment_book_pdf" >
+        <argument
+            android:name="pdf"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/testResultFragment"
+        android:name="uz.ubtuit.powerbi.ui.TestResultFragment"
+        android:label="fragment_test_result"
+        tools:layout="@layout/fragment_test_result" >
+        <argument
+            android:name="totalQuestion"
+            app:argType="integer" />
+        <argument
+            android:name="correctAnswers"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_testResultFragment_to_menuFragment"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/menuFragment" />
+    </fragment>
+</navigation>

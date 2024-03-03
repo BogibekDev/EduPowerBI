@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/kulrang"
+    tools:context=".ui.GraphicsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:background="@color/sariq"
+        android:padding="16dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/ivBack"
+            android:src="@drawable/ic_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:textColor="@color/kulrang"
+            android:text="@string/grafiklar"
+            android:textSize="32sp"
+            android:gravity="center_horizontal"/>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/ivGraph"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="fitXY"
+        android:contentDescription="@string/app_name"
+        android:adjustViewBounds="true"/>
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:padding="6dp"
+        android:text="In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
