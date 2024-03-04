@@ -53,6 +53,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu){
         val bVideos = view.findViewById<Button>(R.id.bVideos)
         val bTests = view.findViewById<Button>(R.id.bTests)
         val bBooks = view.findViewById<Button>(R.id.bBooks)
+        val bTasks = view.findViewById<Button>(R.id.bTasks)
 
         bGraphics.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment_to_graphicsFragment)
@@ -69,7 +70,9 @@ class MenuFragment : Fragment(R.layout.fragment_menu){
             findNavController().navigate(R.id.action_menuFragment_to_booksFragment)
         }
 
-
+        bTasks.setOnClickListener{
+            findNavController().navigate(R.id.action_menuFragment_to_tasksFragment)
+        }
     }
 
 

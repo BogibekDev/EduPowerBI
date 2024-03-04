@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_menuFragment_to_aboutProjectFragment"
             app:destination="@id/aboutProjectFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_tasksFragment"
+            app:destination="@id/tasksFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutProjectFragment"
@@ -122,4 +125,9 @@
             app:destination="@id/menuFragment"
             app:popUpTo="@id/menuFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="uz.ubtuit.powerbi.ui.TasksFragment"
+        android:label="fragment_tasks"
+        tools:layout="@layout/fragment_tasks" />
 </navigation>

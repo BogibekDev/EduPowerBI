@@ -43,7 +43,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical">
 
@@ -110,6 +110,19 @@
                     android:text="@string/testlar"
                     android:textColor="@color/kulrang"
                     android:textSize="26sp" />
+
+                <Button
+                    android:id="@+id/bTasks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="26dp"
+                    android:layout_marginTop="16dp"
+                    android:backgroundTint="@color/sariq"
+                    android:paddingVertical="10dp"
+                    android:text="@string/tasks"
+                    android:textColor="@color/kulrang"
+                    android:textSize="26sp" />
+
 
             </LinearLayout>
 
