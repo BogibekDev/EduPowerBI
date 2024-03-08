@@ -20,9 +20,6 @@
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu" >
         <action
-            android:id="@+id/action_menuFragment_to_testFragment"
-            app:destination="@id/testFragment" />
-        <action
             android:id="@+id/action_menuFragment_to_booksFragment"
             app:destination="@id/booksFragment" />
         <action
@@ -40,6 +37,9 @@
         <action
             android:id="@+id/action_menuFragment_to_tasksFragment"
             app:destination="@id/tasksFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_testsFragment"
+            app:destination="@id/testsFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutProjectFragment"
@@ -76,6 +76,9 @@
         <action
             android:id="@+id/action_testFragment_to_testResultFragment"
             app:destination="@id/testResultFragment" />
+        <argument
+            android:name="category"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/videoFragment"
@@ -84,6 +87,9 @@
         tools:layout="@layout/fragment_video" >
         <argument
             android:name="videoUrl"
+            app:argType="string" />
+        <argument
+            android:name="description"
             app:argType="string" />
     </fragment>
     <fragment
@@ -130,4 +136,13 @@
         android:name="uz.ubtuit.powerbi.ui.TasksFragment"
         android:label="fragment_tasks"
         tools:layout="@layout/fragment_tasks" />
+    <fragment
+        android:id="@+id/testsFragment"
+        android:name="uz.ubtuit.powerbi.ui.TestsFragment"
+        android:label="fragment_tests"
+        tools:layout="@layout/fragment_tests" >
+        <action
+            android:id="@+id/action_testsFragment_to_testFragment"
+            app:destination="@id/testFragment" />
+    </fragment>
 </navigation>

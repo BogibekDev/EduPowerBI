@@ -2,10 +2,12 @@ package uz.ubtuit.powerbi.ui
 
 import android.os.Bundle
 import android.util.Log
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.core.os.bundleOf
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.airbnb.lottie.LottieAnimationView
@@ -14,14 +16,17 @@ import retrofit2.Callback
 import retrofit2.Response
 import uz.ubtuit.powerbi.R
 import uz.ubtuit.powerbi.adapter.BooksAdapter
+import uz.ubtuit.powerbi.adapter.TestsAdapter
 import uz.ubtuit.powerbi.data.ApiClient
 import uz.ubtuit.powerbi.model.Book
+import uz.ubtuit.powerbi.model.Question
 import uz.ubtuit.powerbi.utils.hide
 import uz.ubtuit.powerbi.utils.show
 
-class BooksFragment : Fragment(R.layout.fragment_books) {
-    private lateinit var list: ArrayList<Book>
-    private lateinit var adapter: BooksAdapter
+
+class TestsFragment : Fragment(R.layout.fragment_tests) {
+    private lateinit var list: ArrayList<Question>
+    private lateinit var adapter: TestsAdapter
     private lateinit var rvBooks: RecyclerView
     private lateinit var loading: LottieAnimationView
 
@@ -36,43 +41,52 @@ class BooksFragment : Fragment(R.layout.fragment_books) {
         ivBack.setOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
-        loadBooks()
-        adapter = BooksAdapter(list)
-        rvBooks = view.findViewById(R.id.rvBooks)
+        loadTests()
+        adapter = TestsAdapter(list)
+        rvBooks = view.findViewById(R.id.rvTest)
         rvBooks.adapter = adapter
         adapter.itemClick = { position ->
 
             findNavController()
                 .navigate(
-                    R.id.action_booksFragment_to_bookPdfFragment,
+                    R.id.action_testsFragment_to_testFragment,
                     bundleOf(
-                        "pdf" to list[position].file
+                        "category" to list[position].toifalash.dars
                     )
                 )
         }
 
     }
 
-    private fun loadBooks() {
+    private fun loadTests() {
         loading.show()
         list = ArrayList()
-        ApiClient.apiService.getPDFs().enqueue(object : Callback<ArrayList<Book>> {
+        ApiClient.apiService.getTests().enqueue(object : Callback<ArrayList<Question>> {
             override fun onResponse(
-                call: Call<ArrayList<Book>>,
-                response: Response<ArrayList<Book>>
+                call: Call<ArrayList<Question>>,
+                response: Response<ArrayList<Question>>
             ) {
                 if (response.isSuccessful) {
-                    list = response.body()!!
+                    val categories = ArrayList<String>()
+                    response.body()!!.forEach {
+                        if (!categories.contains(it.toifalash.dars)) {
+                            categories.add(it.toifalash.dars)
+                            list.add(it)
+                        }
+                    }
+
                     adapter.submitList(list)
                 }
                 loading.hide()
                 Log.d("@@@@", "onResponse: ${response.code()}")
             }
 
-            override fun onFailure(call: Call<ArrayList<Book>>, t: Throwable) {
+            override fun onFailure(call: Call<ArrayList<Question>>, t: Throwable) {
                 loading.hide()
                 Log.d("@@@@", "onFailure: ${t.message}")
             }
         })
     }
+
+
 }

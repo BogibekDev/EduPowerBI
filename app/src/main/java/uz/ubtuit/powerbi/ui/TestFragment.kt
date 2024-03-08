@@ -1,6 +1,7 @@
 package uz.ubtuit.powerbi.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.RadioButton
@@ -10,9 +11,16 @@ import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.airbnb.lottie.LottieAnimationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import uz.ubtuit.powerbi.R
+import uz.ubtuit.powerbi.data.ApiClient
 import uz.ubtuit.powerbi.model.Question
+import uz.ubtuit.powerbi.utils.hide
+import uz.ubtuit.powerbi.utils.show
 
 class TestFragment : Fragment(R.layout.fragment_test) {
     private lateinit var tvQuestionNumber: TextView
@@ -27,14 +35,18 @@ class TestFragment : Fragment(R.layout.fragment_test) {
     private var count = 0
     private var correctAnswers = 0
     private var selected = ""
+    private lateinit var loading: LottieAnimationView
+    private var category = ""
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loadQuestions()
+
         initViews(view)
     }
 
     private fun initViews(view: View) {
         val ivBack = view.findViewById<ImageView>(R.id.ivBack)
+        loading = view.findViewById(R.id.loading)
         tvQuestion = view.findViewById(R.id.tv_question)
         tvQuestionNumber = view.findViewById(R.id.tv_question_number)
         rbAnswer1 = view.findViewById(R.id.rb_answer1)
@@ -43,7 +55,8 @@ class TestFragment : Fragment(R.layout.fragment_test) {
         rbAnswer4 = view.findViewById(R.id.rb_answer4)
         radioGroup = view.findViewById(R.id.rg_answers)
         bNext = view.findViewById(R.id.bNext)
-        setQuestion(count)
+        loadQuestions()
+
         ivBack.setOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
@@ -61,7 +74,7 @@ class TestFragment : Fragment(R.layout.fragment_test) {
             }
 
             if (selected.isNotBlank()) {
-                if (selected == questions[count].correctAnswer) correctAnswers++
+                if (selected == questions[count].t_j) correctAnswers++
                 count++
                 if (count == questions.size) {
 
@@ -72,8 +85,8 @@ class TestFragment : Fragment(R.layout.fragment_test) {
                             "correctAnswers" to correctAnswers
                         )
                     )
-                    correctAnswers=0
-                    count=0
+                    correctAnswers = 0
+                    count = 0
                 } else setQuestion(count)
             } else {
                 Toast.makeText(requireContext(), "Siz javob tanlamadingiz!", Toast.LENGTH_SHORT)
@@ -88,22 +101,38 @@ class TestFragment : Fragment(R.layout.fragment_test) {
         radioGroup.clearCheck()
         selected = ""
         tvQuestionNumber.text = "Question ${i + 1}/${questions.size}"
-        tvQuestion.text = questions[i].question
-        rbAnswer1.text = questions[i].variant1
-        rbAnswer2.text = questions[i].variant2
-        rbAnswer3.text = questions[i].variant3
-        rbAnswer4.text = questions[i].variant4
+        tvQuestion.text = questions[i].test
+        rbAnswer1.text = questions[i].a
+        rbAnswer2.text = questions[i].b
+        rbAnswer3.text = questions[i].c
+        rbAnswer4.text = questions[i].d
 
     }
 
     private fun loadQuestions() {
+        category = arguments?.getString("category") ?: ""
         questions = ArrayList()
-        questions.add(Question("Savol1", "javob1", "javob2", "javob3", "javob4", "javob1"))
-        questions.add(Question("Savol2", "javob1", "javob2", "javob3", "javob4", "javob2"))
-        questions.add(Question("Savol3", "javob1", "javob2", "javob3", "javob4", "javob2"))
-        questions.add(Question("Savol4", "javob1", "javob2", "javob3", "javob4", "javob2"))
-        questions.add(Question("Savol5", "javob1", "javob2", "javob3", "javob4", "javob2"))
-        questions.add(Question("Savol6", "javob1", "javob2", "javob3", "javob4", "javob2"))
+        loading.show()
+        ApiClient.apiService.getTests().enqueue(object : Callback<ArrayList<Question>> {
+            override fun onResponse(
+                call: Call<ArrayList<Question>>,
+                response: Response<ArrayList<Question>>
+            ) {
+                if (response.isSuccessful) {
+                    response.body()!!.forEach { question ->
+                        if (category == question.toifalash.dars) questions.add(question)
+                    }
+                    setQuestion(count)
+                }
+                loading.hide()
+                Log.d("@@@@", "onResponse: ${response.code()}")
+            }
+
+            override fun onFailure(call: Call<ArrayList<Question>>, t: Throwable) {
+                loading.hide()
+                Log.d("@@@@", "onFailure: ${t.message}")
+            }
+        })
     }
 
 }

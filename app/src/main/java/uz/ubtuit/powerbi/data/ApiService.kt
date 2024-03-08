@@ -8,13 +8,13 @@ import uz.ubtuit.powerbi.model.Video
 
 interface ApiService {
 
-    @GET("list/test/")
+    @GET("list/test")
     fun getTests(): Call<ArrayList<Question>>
 
-    @GET("list/Pdf/")
+    @GET("list/Pdf")
     fun getPDFs(): Call<ArrayList<Book>>
 
-    @GET("list/videos/")
+    @GET("list/videos")
     fun getVideos(): Call<ArrayList<Video>>
 
 }

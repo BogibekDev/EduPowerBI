@@ -1,6 +1,7 @@
 package uz.ubtuit.powerbi.model
 
 data class Video(
-    val name: String,
-    val url: String,
+    val title: String,
+    val file: String,
+    val description: String
 )

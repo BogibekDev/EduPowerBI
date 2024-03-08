@@ -34,7 +34,7 @@ class BooksAdapter(private var list: List<Book>) :
             item.setOnClickListener {
                 itemClick?.invoke(position)
             }
-            tvName.text = list[position].name
+            tvName.text = list[position].title
         }
     }
 

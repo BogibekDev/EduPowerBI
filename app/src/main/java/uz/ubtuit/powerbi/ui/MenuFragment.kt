@@ -59,7 +59,7 @@ class MenuFragment : Fragment(R.layout.fragment_menu){
             findNavController().navigate(R.id.action_menuFragment_to_graphicsFragment)
         }
         bTests.setOnClickListener {
-            findNavController().navigate(R.id.action_menuFragment_to_testFragment)
+            findNavController().navigate(R.id.action_menuFragment_to_testsFragment)
         }
 
         bVideos.setOnClickListener {

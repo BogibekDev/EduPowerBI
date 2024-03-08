@@ -1,10 +1,15 @@
 package uz.ubtuit.powerbi.model
 
 data class Question(
-    val question: String,
-    val variant1: String,
-    val variant2: String,
-    val variant3: String,
-    val variant4: String,
-    val correctAnswer: String
+    val toifalash: Category,
+    val test: String,
+    val a: String,
+    val b: String,
+    val c: String,
+    val d: String,
+    val t_j: String
+)
+
+data class Category(
+    val dars: String,
 )

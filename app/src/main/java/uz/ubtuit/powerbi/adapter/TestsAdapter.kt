@@ -8,39 +8,39 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.card.MaterialCardView
 import uz.ubtuit.powerbi.R
-import uz.ubtuit.powerbi.model.Video
+import uz.ubtuit.powerbi.model.Book
+import uz.ubtuit.powerbi.model.Question
 
-class VideosAdapter(private var list: List<Video>) :
-    RecyclerView.Adapter<VideosAdapter.VideoViewHolder>() {
+class TestsAdapter(private var list: List<Question>) :
+    RecyclerView.Adapter<TestsAdapter.BookViewHolder>() {
 
     var itemClick: ((Int) -> Unit)? = null
 
-
     @SuppressLint("NotifyDataSetChanged")
-    fun submitList(list: List<Video>) {
-        this.list = list
+    fun submitList(list: List<Question>){
+        this.list=list
         notifyDataSetChanged()
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VideoViewHolder {
-        return VideoViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_video, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
+        return BookViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.item_book, parent, false)
         )
     }
 
     override fun getItemCount() = list.size
 
-    override fun onBindViewHolder(holder: VideoViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
         holder.apply {
             item.setOnClickListener {
                 itemClick?.invoke(position)
             }
-            tvName.text = list[position].title
+            tvName.text = list[position].toifalash.dars
         }
     }
 
-    class VideoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    class BookViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val item: MaterialCardView = view.findViewById(R.id.item)
-        val tvName: TextView = view.findViewById(R.id.tvVideoName)
+        val tvName: TextView = view.findViewById(R.id.tvBookName)
     }
 }
