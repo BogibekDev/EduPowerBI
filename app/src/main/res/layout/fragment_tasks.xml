@@ -27,64 +27,239 @@
     </LinearLayout>
 
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:paddingHorizontal="16dp"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Topshiriq"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:orientation="vertical"
+           android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tvTaskText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Topshiriq matni internetdan keladi"
-                android:textSize="22sp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/black"/>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:orientation="vertical"
+               android:background="#FFFFFF"
+               android:paddingHorizontal="16dp"
+               android:layout_height="match_parent">
 
-        </LinearLayout>
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_marginTop="16dp"
+                   android:orientation="vertical"
+                   android:layout_height="wrap_content">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Topshiriq1: Dashboard Yaratish"
+                       android:textSize="26sp"
+                       android:textStyle="bold"
+                       android:textColor="@color/black"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tekshirish uchun namuna:"
-                android:textSize="26sp"
-                android:textStyle="bold"
-                android:textColor="@color/black"/>
-
-            <ImageView
-                android:id="@+id/ivTaskAnswer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:textSize="22sp"
-                android:src="@drawable/img_microsoft"
-                android:contentDescription="@string/app_name"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/black"/>
-
-        </LinearLayout>
+                   <TextView
+                       android:id="@+id/tvTaskText"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Quyidagi keltirilgan dashboardni yasang!"
+                       android:textSize="16sp"
+                       android:layout_marginTop="10dp"
+                       android:textColor="@color/black"/>
 
 
-    </LinearLayout>
+
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_marginTop="16dp"
+                   android:orientation="vertical"
+                   android:layout_height="wrap_content">
+
+                   <ImageView
+                       android:id="@+id/ivTaskAnswer"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:adjustViewBounds="true"
+                       android:textSize="22sp"
+                       android:src="@drawable/task1"
+                       android:contentDescription="@string/app_name"
+                       android:layout_marginTop="10dp"
+                       android:textColor="@color/black"/>
+
+               </LinearLayout>
+
+
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:orientation="vertical"
+               android:background="#FFFFFF"
+               android:paddingHorizontal="16dp"
+               android:layout_height="match_parent">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_marginTop="16dp"
+                   android:orientation="vertical"
+                   android:layout_height="wrap_content">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Topshiriq2: Dashboard Yaratish"
+                       android:textSize="26sp"
+                       android:textStyle="bold"
+                       android:textColor="@color/black"/>
+
+                   <TextView
+                       android:id="@+id/tvTask2Text"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Quyidagi keltirilgan dashboardni yasang!"
+                       android:textSize="16sp"
+                       android:layout_marginTop="10dp"
+                       android:textColor="@color/black"/>
+
+
+
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_marginTop="16dp"
+                   android:orientation="vertical"
+                   android:layout_height="wrap_content">
+
+                   <ImageView
+                       android:id="@+id/ivTask2Answer"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:adjustViewBounds="true"
+                       android:textSize="22sp"
+                       android:src="@drawable/task2"
+                       android:contentDescription="@string/app_name"
+                       android:layout_marginTop="10dp"
+                       android:textColor="@color/black"/>
+
+               </LinearLayout>
+
+
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:orientation="vertical"
+               android:background="#FFFFFF"
+               android:paddingHorizontal="16dp"
+               android:layout_height="match_parent">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_marginTop="16dp"
+                   android:orientation="vertical"
+                   android:layout_height="wrap_content">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Topshiriq3: Dashboard Yaratish"
+                       android:textSize="26sp"
+                       android:textStyle="bold"
+                       android:textColor="@color/black"/>
+
+                   <TextView
+                       android:id="@+id/tvTask3Text"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Quyidagi keltirilgan dashboardni yasang!"
+                       android:textSize="16sp"
+                       android:layout_marginTop="10dp"
+                       android:textColor="@color/black"/>
+
+
+
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_marginTop="16dp"
+                   android:orientation="vertical"
+                   android:layout_height="wrap_content">
+
+                   <ImageView
+                       android:id="@+id/ivTask3Answer"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:adjustViewBounds="true"
+                       android:textSize="22sp"
+                       android:src="@drawable/task3"
+                       android:contentDescription="@string/app_name"
+                       android:layout_marginTop="10dp"
+                       android:textColor="@color/black"/>
+
+               </LinearLayout>
+
+
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:orientation="vertical"
+               android:background="#FFFFFF"
+               android:paddingHorizontal="16dp"
+               android:layout_height="match_parent">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_marginTop="16dp"
+                   android:orientation="vertical"
+                   android:layout_height="wrap_content">
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Topshiriq4: Dashboard Yaratish"
+                       android:textSize="26sp"
+                       android:textStyle="bold"
+                       android:textColor="@color/black"/>
+
+                   <TextView
+                       android:id="@+id/tvTask4Text"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Quyidagi keltirilgan dashboardni yasang!"
+                       android:textSize="16sp"
+                       android:layout_marginTop="10dp"
+                       android:textColor="@color/black"/>
+
+
+
+
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_marginTop="16dp"
+                   android:orientation="vertical"
+                   android:layout_height="wrap_content">
+
+                   <ImageView
+                       android:id="@+id/ivTask4Answer"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:adjustViewBounds="true"
+                       android:textSize="22sp"
+                       android:src="@drawable/task4"
+                       android:contentDescription="@string/app_name"
+                       android:layout_marginTop="10dp"
+                       android:textColor="@color/black"/>
+
+               </LinearLayout>
+
+
+           </LinearLayout>
+
+       </LinearLayout>
+
+    </ScrollView>
 
 
 </LinearLayout>
