@@ -82,7 +82,7 @@
                        android:layout_height="wrap_content"
                        android:adjustViewBounds="true"
                        android:textSize="22sp"
-                       android:src="@drawable/task1"
+                       android:src="@drawable/task4"
                        android:contentDescription="@string/app_name"
                        android:layout_marginTop="10dp"
                        android:textColor="@color/black"/>
@@ -247,7 +247,7 @@
                        android:layout_height="wrap_content"
                        android:adjustViewBounds="true"
                        android:textSize="22sp"
-                       android:src="@drawable/task4"
+                       android:src="@drawable/task1"
                        android:contentDescription="@string/app_name"
                        android:layout_marginTop="10dp"
                        android:textColor="@color/black"/>
