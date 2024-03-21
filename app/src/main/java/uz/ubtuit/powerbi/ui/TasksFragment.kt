@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import uz.ubtuit.powerbi.R
 
 class TasksFragment : Fragment(R.layout.fragment_tasks) {
@@ -15,7 +16,10 @@ class TasksFragment : Fragment(R.layout.fragment_tasks) {
     }
 
     private fun initViews(view: View) {
-
+        val ivBack = view.findViewById<ImageView>(R.id.ivBack)
+        ivBack.setOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
     }
 
 }

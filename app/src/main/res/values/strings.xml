@@ -20,9 +20,11 @@
     <string name="all_apps">Hamma dasturlar</string>
     <string name="micCorp">Microsoft korporatsiyasi</string>
     <string name="micDesc">Microsoft ilovalari – odamlar va korxonalarga o‘z imkoniyatlarini to‘liq ro‘yobga chiqarishga yordam beruvchi dasturiy ta’minot, xizmatlar va qurilmalar bo‘yicha jahon yetakchisi.</string>
-    <string name="name_of_developer">Dasturchi ismi</string>
-    <string name="purpose_of_app">Dastur maqsadi haqida text adjajd al jl js lsjl lskfj lskj fl ajlskj flksj flks jflks lsdj flks jfls jsj flks jlsj flksj lsj lsj fls jfsjfks jfl</string>
+    <string name="name_of_developer">Zafarbek Soporboyev</string>
+    <string name="purpose_of_app">Microsoft PowerBi haqida bilim va ko‘nikmalar berish</string>
     <string name="techs">Kotlin, XML, Material3, Lottie, RestApi, Retrofit2, PDFView, ExoPlayer, Media3, Glide,Jetpack Navigation, SafeArgument</string>
     <string name="version_of_app">1.0.0 Beta</string>
     <string name="tasks">Topshiriqlar</string>
+    <string name="name_of_academic_leader">Bogibek Matyaqubov</string>
+    <string name="version_of_android">7+</string>
 </resources>
