@@ -25,6 +25,6 @@
     <string name="techs">Kotlin, XML, Material3, Lottie, RestApi, Retrofit2, PDFView, ExoPlayer, Media3, Glide,Jetpack Navigation, SafeArgument</string>
     <string name="version_of_app">1.0.0 Beta</string>
     <string name="tasks">Topshiriqlar</string>
-    <string name="name_of_academic_leader">Bogibek Matyaqubov</string>
+    <string name="name_of_academic_leader">Shohida Yusupova</string>
     <string name="version_of_android">7+</string>
 </resources>
