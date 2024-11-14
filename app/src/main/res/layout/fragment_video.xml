@@ -40,7 +40,7 @@
            <androidx.media3.ui.PlayerView
                android:id="@+id/playerView"
                android:layout_width="match_parent"
-               android:layout_height="wrap_content"
+               android:layout_height="256dp"
                app:use_controller="true"
                app:show_buffering="when_playing"
                app:shutter_background_color="@color/sariq"
